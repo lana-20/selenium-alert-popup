@@ -70,3 +70,17 @@ How to specify/inject the username and password inside the URL? Place it between
 
 ![image](https://user-images.githubusercontent.com/70295997/206785270-9413cc79-7f8a-4760-aa6b-07262d535dd5.png)
 
+_admin:admin@_ is not the application username and password. It's not for a regular app, like Amazon, with a typical login page. Not a Login Page where I identify the usename, password and login elements. __Authentication Popups__ are not a part of the app. Such a popup appears before the app, since the browser authenticates whether I am the right person or not. It's an additional window imposed on top of my app. A corporate company intentionally introduces this kind of Authentication Popup before letting me access the app. To verify me as a user, the company internally orientationally imposes this particular window.
+
+Even the _.send_keys()_ method does not work, because there are 2 elements. The _.switch_to.alert_ method does not work either. The only way to handle this is to __inject__ the username and password in to the URL. That bypasses the Authentication Popup.
+
+
+Bypass the Alert window, go directly to the app Home Page, and verify the Signin Confirmation Message:
+
+	driver.get("https://admin:admin@the-internet.herokuapp.com/basic-auth")
+
+As soon as I enter the [injected] URL, I land on the Home Page (or signin confirmation page).
+
+_Interview Question_: How to handle Authentication Popups/Windows?
+
+I inject my username and password into the URL and then bypass it.
