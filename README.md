@@ -50,4 +50,23 @@ Can also try chaining the commands as follows:
 	driver.switch_to.alert.dismiss()
 	
 
+__Authentication Popup__
+
+Sometimes, when launching my app, I come across an _Authentication Popup_, which asks for a username and password. It doesn't often happen in prod apps, like an e-commerce website. It occurs mostly in a corporate environment where my Authorization details are required before I can access the app. Companies usually introduce come sort of security for their apps and supply my corporate id and password. Only when I work on a company-specific project, in a particular corporate environment, I run into these kind of web sites.
+
+AUT: http://the-internet.herokuapp.com/basic_auth
+
+Syntax: http://username:password@test.com
+
+Example: http://admin:admin@the-internet.herokuapp.com/basic_auth
+
+
+How to handle such an __Authentication Popup__? I need to enter the username and password and click the 'Sign in' or 'Cancel' button. There are 2 input fields and 2 buttons.
+Alert is not a web element, I cannot interact with it dorectly, and the _.find_element()_ method doesn't work. The only way to hadle this is to _bypass_ the window by providing username and password. This is called __Injection__.
+
+Normally I send the URL and then get this alert window. But sometimes, when I pass the username and password along with the URL, then I can bypass this alert window and directly access the application.
+
+How to specify/inject the username and password inside the URL? Place it between the Protocol and Domain [Name].
+
+![image](https://user-images.githubusercontent.com/70295997/206785270-9413cc79-7f8a-4760-aa6b-07262d535dd5.png)
 
