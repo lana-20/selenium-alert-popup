@@ -133,5 +133,5 @@ These are the only 2 steps I need to create:
 
 Then, I pass the 'ops' object to the driver, along with the 'serv_obj'.
 
-This particular setting disables the Notification Popups, when I launch the browser.
+This particular setting disables the Notification Popups, when I launch my browser. It neither accepts, nor blocks/denies, it just ignores the popup and proceeds further.
 
