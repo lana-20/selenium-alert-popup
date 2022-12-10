@@ -99,4 +99,39 @@ Unless I handle this Notification Popup, I cannot proceed to perform any further
 
 The one way to handle this popup is by disabling the notification. I can disable this Notification Window at the browser level through the automation code. For that, whenever I launch my browser, I need to add some settings at the browser level. At that time, I add some attributes, similar to how I add the Service() object at the time of launching the Chrome browser. Similarily, I also add some attributes. By adding these attributes, I can avoid the Notification Window. It won't appear. That's the only way I can bypass it. But I cannot directly interact with this element or direcly bypass it. It's only possible through the browser settings.
 
+	from selenium import webdriver
+	from selenium.webdriver.chrome.service import Service
+
+	serv_obj = Service("...chromedriver.exe")
+	driver = webdriver.Chrome(service=serv_obj)
+
+	driver.get("https://whatmylocation.com/")
+	driver.maximize_window()
+
+
+To handle this popup, I need to create something Chrome Options, before launching the browser.
+
+	webdriver.ChromeOptions()
+
+ChromeOptions() is the class I use to specify the browser level settings. Eg, I can disable the popups or execute the script in _headless_ mode (without seeing the browser when executing test cases as a backend). To apply all of these settings, I use these Chrome Options.
+
+_webdriver.ChromeOptions()_ returns an options object. I create a variable called 'ops'.
+
+	ops = webdriver.ChromeOptions()
+
+Currently, I pass only the Service object to the driver. Inside the Chrome() browser class, I also need to pass the Options object, by using keyword _options_:
+
+	driver = webdriver.Chrome(service=serv_obj, options=ops)
+
+I've created an Options object, now I need to add settings to this option. I use the _.add_argument()_ method. Here, I pass the parameter _--disable-notifications_ to disable the notifications:
+
+	ops.add_argument("--disable-notifications")
+
+These are the only 2 steps I need to create:
+1) webdriver.ChromeOptions() which creates an object 'ops'
+2) By using this object I set one argument at the browser level
+
+Then, I pass the 'ops' object to the driver, along with the 'serv_obj'.
+
+This particular setting disables the Notification Popups, when I launch the browser.
 
