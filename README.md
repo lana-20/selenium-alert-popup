@@ -84,3 +84,12 @@ As soon as I enter the [injected] URL, I land on the Home Page (or signin confir
 _Interview Question_: How to handle Authentication Popups/Windows?
 
 I inject my username and password into the URL and then bypass it.
+
+__Notification Popup__
+
+__Notification Popup__ is another type of an Alert Window. I do not see it in every type of app, only in some web apps.
+
+Go to https://whatmylocation.com/.
+
+<img src="https://user-images.githubusercontent.com/70295997/206869783-f92eb571-eebc-485a-a0a7-3a9c548df884.png" width=600></img>
+
