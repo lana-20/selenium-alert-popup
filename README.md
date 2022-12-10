@@ -93,3 +93,10 @@ Go to https://whatmylocation.com/.
 
 <img src="https://user-images.githubusercontent.com/70295997/206869783-f92eb571-eebc-485a-a0a7-3a9c548df884.png" width=600></img>
 
+I can see a small popup, which contains 'Hello' and 'Block' buttons. This popup notification does not come from the app, it comes from the browser itself.
+
+Unless I handle this Notification Popup, I cannot proceed to perform any further action. I cannot handle this directly using the _alert_ commands to close the popup. I cannot switch to select options. It's not even like an Authentication Popup, I can't directly inject anything to bypass it.
+
+The one way to handle this popup is by disabling the notification. I can disable this Notification Window at the browser level through the automation code. For that, whenever I launch my browser, I need to add some settings at the browser level. At that time, I add some attributes, similar to how I add the Service() object at the time of launching the Chrome browser. Similarily, I also add some attributes. By adding these attributes, I can avoid the Notification Window. It won't appear. That's the only way I can bypass it. But I cannot directly interact with this element or direcly bypass it. It's only possible through the browser settings.
+
+
